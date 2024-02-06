@@ -1,5 +1,5 @@
 {
-  "name": "template-project",
+  "name": "Weather App",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blu3tan/Template-project.git"
+    "url": "git+https://github.com/blu3tan/Weather-App.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/blu3tan/Template-project/issues"
+    "url": "https://github.com/blu3tan/Weather-App/issues"
   },
-  "homepage": "https://github.com/blu3tan/Template-project#readme",
+  "homepage": "https://github.com/blu3tan/Weather-App#readme",
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",

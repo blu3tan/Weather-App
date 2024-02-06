@@ -1,4 +1,4 @@
-# TITLE # 
+# WEATHER APP
 
 <div align="center">
 <a href="">     //Link image
@@ -10,17 +10,10 @@
 
 </div>
 
-# Concept #
+# Concept
 
+# Modular logic
 
+# Visual and ux
 
-# Modular logic #
-
-
-
-# Visual and ux #
-
-
-
------------------------------------------------------------------------------
-
+---
