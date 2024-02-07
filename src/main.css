@@ -4,6 +4,8 @@
   --font-body: "Nunito Sans";
   --font-title: "Rubik";
 
+  --border-test: solid 1px blue;
+  --border-radius: 2rem;
   --color-body: hsl(233, 4%, 62%);
 }
 
@@ -48,4 +50,42 @@ select {
 
 span {
   user-select: none;
+}
+
+/************************** App container **************************/
+
+.app-container {
+  display: grid;
+  grid-template-rows: 1fr 4fr 2fr;
+  gap: 1rem;
+
+  padding: 1rem;
+  width: 90dvw;
+  height: 90dvh;
+  background-color: #7d7f86;
+  border-radius: var(--border-radius);
+  border: var(--border-test);
+}
+
+.app-container > * {
+  border: var(--border-test);
+  border-radius: var(--border-radius);
+  background-color: inherit;
+}
+
+/************************** Data container **************************/
+
+.data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  filter: brightness(1.1) hue-rotate(30deg);
+}
+
+.data > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
 }
