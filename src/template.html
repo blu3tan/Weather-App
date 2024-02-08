@@ -1,36 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-  </head>
-  <body>
-    <section id="app-container" class="app-container">
-      <div id="header" class="header"></div>
-      <div id="main" class="main"></div>
-      <div id="data" class="data">
-        <div id="precipitation" class="data-item">
-          <div id="icon">
-            <img src="./icons/umbrella.png" alt="" />
-          </div>
-          <div id="mesure">
-            <span>100%</span>
-          </div>
-        </div>
-        <div id="humidity" class="data-item">
-          <div id="icon">
-            <img src="./icons/drops.png" alt="" />
-          </div>
-          <div id="mesure">100%</div>
-        </div>
-        <div id="wind" class="data-item">
-          <div id="icon">
-            <img src="./icons/wind.png" alt="" />
-          </div>
-          <div id="mesure">100%</div>
-        </div>
-      </div>
-    </section>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather App</title>
+	</head>
+	<body>
+		<section id="app-container" class="app-container">
+			<div id="header" class="header">
+				<input id="location" class="location-input" type="text" />
+			</div>
+			<div id="date-dysplay" class="date-dysplay">
+				<span id="day" class="day"></span>
+				<span id="time" class="time"></span>
+			</div>
+			<div id="main" class="main"></div>
+			<div id="data" class="data">
+				<div id="precipitation" class="data-item">
+					<div id="icon">
+						<img src="./icons/umbrella.png" alt="" />
+					</div>
+					<div id="mesure">
+						<span>100%</span>
+					</div>
+				</div>
+				<div id="humidity" class="data-item">
+					<div id="icon">
+						<img src="./icons/drops.png" alt="" />
+					</div>
+					<div id="mesure">100%</div>
+				</div>
+				<div id="wind" class="data-item">
+					<div id="icon">
+						<img src="./icons/wind.png" alt="" />
+					</div>
+					<div id="mesure">100%</div>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>

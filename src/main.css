@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400&family=Rubik:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;700;800&family=Rubik:wght@400;500;700&display=swap');
 
 :root {
-  --font-body: "Nunito Sans";
-  --font-title: "Rubik";
+	--font-body: 'Nunito Sans';
+	--font-title: 'Rubik';
 
-  --border-test: solid 1px blue;
-  --border-radius: 2rem;
-  --color-body: hsl(233, 4%, 62%);
+	--border-test: solid 1px blue;
+	--border-radius: 2rem;
+	--color-body: hsl(233, 4%, 62%);
 }
 
 /************************** General reset **************************/
@@ -14,22 +14,22 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-body);
+	font-family: 'Nunito Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	height: 100dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-body);
 }
 
 img,
@@ -37,64 +37,99 @@ picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
 }
 
 span {
-  user-select: none;
+	user-select: none;
 }
 
 /************************** App container **************************/
 
 .app-container {
-  display: grid;
-  grid-template-rows: 1fr 4fr 1fr;
-  gap: 1rem;
+	display: grid;
+	grid-template-rows: 0.5fr 0.5fr 5fr 1.5fr;
+	gap: 1rem;
 
-  padding: 1rem;
-  width: 90dvw;
-  height: 90dvh;
-  background-color: #7d7f86;
-  border-radius: var(--border-radius);
-  border: var(--border-test);
+	padding: 1rem;
+	width: 90dvw;
+	height: 90dvh;
+	background-color: #7d7f86;
+	border-radius: var(--border-radius);
+	border: var(--border-test);
 }
 
 .app-container > * {
-  border: var(--border-test);
-  border-radius: var(--border-radius);
-  background-color: inherit;
+	border: var(--border-test);
+	border-radius: var(--border-radius);
+	background-color: inherit;
+}
+
+/************************** Header container **************************/
+
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header input {
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border: 0;
+	border-radius: var(--border-radius);
+	overflow-x: auto;
+	background-color: transparent;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: var(--font-body);
+	font-size: 1.6rem;
+	font-weight: 700;
+	padding-inline: 2rem;
+}
+
+/************************** Day-Time container **************************/
+
+.date-dysplay {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	& span {
+		font-size: 1.3rem;
+		padding-inline: 2rem;
+	}
 }
 
 /************************** Data container **************************/
 
 .data {
-  overflow: hidden;
-  user-select: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 1rem;
-  filter: brightness(1.15);
+	overflow: hidden;
+	user-select: none;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 1rem;
+	filter: brightness(1.15);
 }
 
 .data > * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  overflow: hidden;
-  font-size: 1.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	overflow: hidden;
+	font-size: 1.2rem;
 
-  & img {
-    /* margin-bottom: 0.5rem; */
-    max-width: 50px;
-    scale: 0.5;
-  }
+	& img {
+		max-width: 50px;
+		scale: 0.5;
+	}
 }
