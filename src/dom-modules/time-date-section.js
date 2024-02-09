@@ -1,3 +1,5 @@
+// Display the day and the running time on the dedicated section
+
 export default function timeAndDate() {
 	const day = document.getElementById('day');
 	const time = document.getElementById('time');
