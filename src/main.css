@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;700;800&family=Rubik:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;700;800&family=Rubik:wght@400;500;700&display=swap');
 
 :root {
 	--font-body: 'Nunito Sans';
@@ -56,19 +56,19 @@ span {
 
 .app-container {
 	display: grid;
-	grid-template-rows: 0.5fr 0.5fr 5fr 1.5fr;
+	grid-template-rows: 50px 50px 3fr 1fr;
 	gap: 1rem;
 
 	padding: 1rem;
-	width: 90dvw;
-	height: 90dvh;
+	width: min(95dvw, 450px);
+	height: max(80dvh, 650px);
 	background-color: #7d7f86;
 	border-radius: var(--border-radius);
-	border: var(--border-test);
+	/* border: var(--border-test); */
 }
 
 .app-container > * {
-	border: var(--border-test);
+	/* border: var(--border-test); */
 	border-radius: var(--border-radius);
 	background-color: inherit;
 }
@@ -92,7 +92,7 @@ span {
 	text-align: center;
 	font-family: var(--font-body);
 	font-size: 1.6rem;
-	font-weight: 700;
+	font-weight: 800;
 	padding-inline: 2rem;
 }
 
@@ -104,8 +104,9 @@ span {
 	justify-content: space-between;
 
 	& span {
-		font-size: 1.3rem;
-		padding-inline: 2rem;
+		font-size: 1.5rem;
+		font-weight: 500;
+		padding-inline: 1rem;
 	}
 }
 
@@ -130,6 +131,54 @@ span {
 
 	& img {
 		max-width: 50px;
-		scale: 0.5;
+		scale: 0.8;
+		margin-bottom: 0.5rem;
 	}
+}
+
+/************************** Main container **************************/
+
+.main {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	padding-bottom: 3rem;
+}
+
+.temp {
+	position: relative;
+	border-radius: var(--border-radius);
+	font-family: var(--font-title);
+	font-size: 8rem;
+	font-weight: 700;
+
+	&::after {
+		content: '°';
+		font-size: 5rem;
+		font-weight: 700;
+		font-family: inherit;
+		position: absolute;
+	}
+
+	&::before {
+		content: 'C';
+		left: calc(100% + 2.2rem);
+		top: 8%;
+		font-size: 2rem;
+		font-weight: 500;
+		font-family: inherit;
+		position: absolute;
+	}
+
+	&.far::before {
+		content: 'F';
+	}
+}
+
+.weather-icon {
+	scale: 0.7;
+	top: -3rem;
+	left: -2rem;
+	position: absolute;
 }
