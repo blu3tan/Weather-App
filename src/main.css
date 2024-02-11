@@ -79,6 +79,7 @@ span {
 	height: max(85dvh, 750px);
 	border-radius: var(--border-radius);
 	overflow: hidden;
+	background-color: cadetblue;
 	box-shadow:
 		rgba(64, 64, 80, 0.325) 0px 50px 100px -20px,
 		rgba(0, 0, 0, 0.381) 0px 30px 60px -30px,
@@ -94,12 +95,12 @@ span {
 /************************** Header container **************************/
 
 .header {
+	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 .header input {
-	position: relative;
 	width: 100%;
 	height: 100%;
 	outline: none;
@@ -123,14 +124,47 @@ span {
 }
 
 .list-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 	position: absolute;
-	background-color: brown;
-	/* display: none; */
+	z-index: 20;
+	top: calc(100% + 0.5rem);
+	left: 0;
+	right: 0;
+	border-radius: var(--border-radius);
+	padding: 1.5rem;
+	font-size: 1.2rem;
+	font-weight: 500;
+	pointer-events: none;
+	background-color: hsla(0, 0%, 100%, 0.2);
+	transform: translateY(-1rem);
+	box-shadow: rgba(0, 2, 0, 0.2) 0px 2px 4px;
+	opacity: 0;
+	transition:
+		opacity 0.3s ease-in-out,
+		transform 0.4s ease-in-out;
+}
+
+.list-container.show {
+	transform: translateY(0);
+	opacity: 1;
+	pointer-events: all;
+}
+
+.list-item {
+	padding: 0.25rem;
+	cursor: pointer;
+	transition: color 0.2s ease-in-out;
+
+	&:hover {
+		color: #fff;
+	}
 }
 
 /************************** Day-Time container **************************/
 
-.date-dysplay {
+.date-display {
 	transform: translateY(0.5rem);
 	position: relative;
 	display: flex;
@@ -147,7 +181,7 @@ span {
 	}
 }
 
-.date-dysplay.enter {
+.date-display.enter {
 	opacity: 1;
 	transform: translateY(0);
 }
