@@ -99,6 +99,7 @@ span {
 	align-items: center;
 }
 .header input {
+	position: relative;
 	width: 100%;
 	height: 100%;
 	outline: none;
@@ -119,6 +120,12 @@ span {
 	&:hover {
 		background-color: hsla(0, 0%, 100%, 0.2);
 	}
+}
+
+.list-container {
+	position: absolute;
+	background-color: brown;
+	/* display: none; */
 }
 
 /************************** Day-Time container **************************/
