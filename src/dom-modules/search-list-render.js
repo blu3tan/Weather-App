@@ -1,4 +1,5 @@
 import searchLocation from '../data-modules/search-location';
+import renderWeather from './weather-render';
 
 export function clearContainer(element) {
 	while (element.firstChild) {
@@ -15,6 +16,9 @@ export async function renderSearchList(input) {
 			const listItem = document.createElement('div');
 			listItem.classList.add('list-item');
 			listItem.textContent = `${element.name}, ${element.country}`;
+			listItem.addEventListener('click', () => {
+				renderWeather(listItem.textContent);
+			});
 			listContainer.appendChild(listItem);
 			listContainer.classList.add('show');
 		});
