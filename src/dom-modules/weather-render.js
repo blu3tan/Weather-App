@@ -10,7 +10,18 @@ const windBox = document.getElementById('wind-measure');
 
 export default async function renderWeather(location) {
 	const weatherData = await weatherLocation(location);
-	console.log(weatherData);
-	searchField.value = weatherData.location.name;
 	listContainer.classList.remove('show');
+
+	// Just a trick to somehow avoid long county names to overflow
+	// eslint-disable-next-line prefer-destructuring
+	const country = weatherData.location.country;
+	const countryShort = country.split(' ').slice(0, 2).join(' ');
+
+	console.log(weatherData.current.condition);
+	weatherIcon.src = `./weather/${weatherData.current.condition.text}.svg`;
+	searchField.value = `${weatherData.location.name}, ${countryShort}`;
+	temperature.textContent = weatherData.current.temp_c;
+	rainBox.textContent = weatherData.current.precip_mm;
+	humidityBox.textContent = weatherData.current.humidity;
+	windBox.textContent = weatherData.current.wind_kph;
 }
