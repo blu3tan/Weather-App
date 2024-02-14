@@ -14,8 +14,15 @@ module.exports = {
 				use: ['html-loader'],
 			},
 			{
-				test: /\.(svg|png|jpg|gif)$/,
+				test: /\.(png|jpg|gif)$/,
 				type: 'asset/resource',
+			},
+			{
+				test: /\.(svg)$/,
+				type: 'asset/resource',
+				generator: {
+					filename: 'weather/[name].svg',
+				},
 			},
 		],
 	},

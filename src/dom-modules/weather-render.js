@@ -1,4 +1,5 @@
 import weatherLocation from '../data-modules/weather-location';
+import imagePicker from './image-picker';
 
 const listContainer = document.getElementById('list-container');
 const searchField = document.getElementById('location');
@@ -10,6 +11,7 @@ const windBox = document.getElementById('wind-measure');
 
 export default async function renderWeather(location) {
 	const weatherData = await weatherLocation(location);
+	const imageName = imagePicker(weatherData);
 	listContainer.classList.remove('show');
 
 	// Just a trick to somehow avoid long county names to overflow
@@ -18,7 +20,7 @@ export default async function renderWeather(location) {
 	const countryShort = country.split(' ').slice(0, 2).join(' ');
 
 	console.log(weatherData.current.condition);
-	weatherIcon.src = `./weather/${weatherData.current.condition.text}.svg`;
+	weatherIcon.src = `./weather/${imageName}.svg`;
 	searchField.value = `${weatherData.location.name}, ${countryShort}`;
 	temperature.textContent = weatherData.current.temp_c;
 	rainBox.textContent = weatherData.current.precip_mm;
