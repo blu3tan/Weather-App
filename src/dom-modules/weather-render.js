@@ -19,6 +19,7 @@ export default async function renderWeather(location) {
 	const country = weatherData.location.country;
 	const countryShort = country.split(' ').slice(0, 2).join(' ');
 
+	console.log(weatherData);
 	weatherIcon.src = `./weather/${imageName}.svg`;
 	searchField.value = `${weatherData.location.name}, ${countryShort}`;
 	temperature.textContent = weatherData.current.temp_c;

@@ -6,9 +6,23 @@
 
 	--border-test: solid 1px blue;
 	--border-radius: 2rem;
-	--color-dynamic: hsl(233, 4%, 62%);
+	--color-dynamic: #1c6c96;
+	--color-screen: hsla(0, 0%, 0%, 0.3);
 
+	--filter-light: brightness(1.2) saturate(0.8);
 	--bounce: cubic-bezier(0.67, 0.6, 0.2, 1.4);
+}
+
+@keyframes sky {
+	0% {
+		background-position: 0% 97%;
+	}
+	50% {
+		background-position: 100% 4%;
+	}
+	100% {
+		background-position: 0% 97%;
+	}
 }
 
 /************************** General reset **************************/
@@ -32,7 +46,11 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--color-dynamic);
+	/* background-color: var(--color-dynamic); */
+	background: linear-gradient(0deg, #1c6c96, #90c5e1);
+	background-size: 200% 200%;
+
+	animation: sky 25s ease infinite;
 }
 
 img,
@@ -51,10 +69,6 @@ select {
 	font: inherit;
 }
 
-/* span {
-	user-select: none;
-} */
-
 /************************** Screen container **************************/
 /* A layer to add luminosity on the bg while app color changes */
 .screen {
@@ -62,13 +76,12 @@ select {
 	z-index: 2;
 	height: 100%;
 	width: 100%;
-	background-color: hsla(0, 0%, 100%, 0.1);
+	background-color: var(--color-screen);
 }
 
 /************************** App container **************************/
 
 .app-container {
-	/* user-select: none; */
 	position: static;
 	z-index: 10;
 	display: grid;
@@ -80,11 +93,12 @@ select {
 	height: max(85dvh, 750px);
 	border-radius: var(--border-radius);
 	overflow: hidden;
+	/* background-color: var(--color-dynamic); */
 	background-color: var(--color-dynamic);
 	box-shadow:
-		rgba(64, 64, 80, 0.325) 0px 50px 100px -20px,
-		rgba(0, 0, 0, 0.381) 0px 30px 60px -30px,
-		rgba(40, 53, 66, 0.35) 0px -2px 12px 0px inset;
+		rgba(64, 64, 80, 0.325) 0px 10px 15px -20px,
+		rgba(0, 0, 0, 0.381) 0px 35px 20px -30px,
+		rgba(40, 53, 66, 0.35) 0px -2px 15px 0px inset;
 }
 
 .app-container > * {
@@ -110,18 +124,18 @@ select {
 	border: 0;
 	border-radius: var(--border-radius);
 	overflow-x: auto;
-	background-color: transparent;
+	background-color: var(--color-dynamic);
 	text-transform: uppercase;
 	text-align: center;
 	font-family: var(--font-body);
 	font-size: 1.2rem;
 	font-weight: 800;
 	padding-inline: 2rem;
-	transition: background-color 0.3s ease-in-out;
+	transition: filter 0.3s ease-in-out;
 
 	&:focus,
 	&:hover {
-		background-color: hsla(0, 0%, 100%, 0.2);
+		filter: var(--filter-light);
 	}
 }
 
@@ -135,7 +149,7 @@ select {
 	left: 0;
 	right: 0;
 	background-color: var(--color-dynamic);
-	filter: brightness(1.1);
+	filter: var(--filter-light);
 	border-radius: var(--border-radius);
 	padding: 1.5rem;
 	font-size: 1.2rem;
@@ -196,9 +210,10 @@ select {
 	/* user-select: none; */
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	filter: brightness(1.1);
 	transform: translateX(-100dvw);
 	transition: transform 0.5s var(--bounce);
+	background-color: var(--color-dynamic);
+	filter: var(--filter-light);
 }
 
 .data.show {
@@ -254,6 +269,7 @@ select {
 }
 
 .temp {
+	user-select: none;
 	cursor: pointer;
 	position: relative;
 	border-radius: var(--border-radius);
