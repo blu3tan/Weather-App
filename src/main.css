@@ -20,7 +20,6 @@
 }
 
 * {
-	user-select: none;
 	margin: 0;
 	padding: 0;
 }
@@ -52,9 +51,9 @@ select {
 	font: inherit;
 }
 
-span {
+/* span {
 	user-select: none;
-}
+} */
 
 /************************** Screen container **************************/
 /* A layer to add luminosity on the bg while app color changes */
@@ -69,6 +68,7 @@ span {
 /************************** App container **************************/
 
 .app-container {
+	/* user-select: none; */
 	position: static;
 	z-index: 10;
 	display: grid;
@@ -88,7 +88,7 @@ span {
 }
 
 .app-container > * {
-	border: var(--border-test);
+	/* border: var(--border-test); */
 	border-radius: var(--border-radius);
 	background-color: inherit;
 }
@@ -101,7 +101,8 @@ span {
 	justify-content: center;
 	align-items: center;
 }
-.header input {
+.header input.location-input {
+	user-select: all;
 	width: 100%;
 	height: 100%;
 	outline: none;
@@ -192,7 +193,7 @@ span {
 
 .data {
 	overflow: hidden;
-	user-select: none;
+	/* user-select: none; */
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	filter: brightness(1.1);
@@ -291,8 +292,6 @@ span {
 
 .weather-icon {
 	scale: 0.8;
-	/* top: 0; */
-	left: -1rem;
 	position: absolute;
 	transform: translateY(-100dvw);
 	transition: transform 0.5s var(--bounce);
