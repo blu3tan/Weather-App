@@ -1,4 +1,5 @@
 import weatherLocation from '../data-modules/weather-location';
+import dynamicColor from './dynamic-color';
 import imagePicker from './image-picker';
 
 const listContainer = document.getElementById('list-container');
@@ -10,16 +11,19 @@ const humidityBox = document.getElementById('humidity-measure');
 const windBox = document.getElementById('wind-measure');
 
 export default async function renderWeather(location) {
+	const root = document.documentElement;
 	const weatherData = await weatherLocation(location);
 	const imageName = imagePicker(weatherData);
+	const appColor = dynamicColor(weatherData);
+	console.log(appColor);
 	listContainer.classList.remove('show');
 
-	// Just a trick to somehow avoid long county names to overflow
+	// Just a trick to somehow avoid long country names to overflow
 	// eslint-disable-next-line prefer-destructuring
 	const country = weatherData.location.country;
 	const countryShort = country.split(' ').slice(0, 2).join(' ');
+	// root.style.setProperty('--color-dynamic', appColor);
 
-	console.log(weatherData);
 	weatherIcon.src = `./weather/${imageName}.svg`;
 	searchField.value = `${weatherData.location.name}, ${countryShort}`;
 	temperature.textContent = weatherData.current.temp_c;
