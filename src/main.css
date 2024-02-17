@@ -283,12 +283,20 @@ select {
 	content: 'mm';
 }
 
+.rain.imperial::after {
+	content: 'in';
+}
+
 .hum::after {
 	content: '%';
 }
 
 .wind::after {
 	content: 'kph';
+}
+
+.wind.imperial::after {
+	content: 'mph';
 }
 
 /************************** Main container **************************/
@@ -333,7 +341,7 @@ select {
 		position: absolute;
 	}
 
-	&.far::before {
+	&.imperial::before {
 		content: 'F';
 	}
 }

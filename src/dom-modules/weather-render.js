@@ -1,6 +1,7 @@
 import weatherLocation from '../data-modules/weather-location';
 import dynamicColor from './dynamic-color';
 import imagePicker from './image-picker';
+import switchUnits from './switch-units';
 import toggleVisibility from './toggle-visibility';
 
 const listContainer = document.getElementById('list-container');
@@ -28,6 +29,10 @@ export default async function renderWeather(location) {
 	root.style.setProperty('--color-dynamic', appColor);
 	weatherText.textContent = description;
 
+	temperature.addEventListener('click', () => {
+		console.log(weatherData);
+		switchUnits(weatherData);
+	});
 	weatherIcon.src = `./weather/${imageName}.svg`;
 	searchField.value = `${weatherData.location.name}, ${countryShort}`;
 	temperature.textContent = weatherData.current.temp_c;
