@@ -5,6 +5,7 @@ const windBox = document.getElementById('wind-measure');
 let switchStatus = 'c';
 
 export function switchToMetric(data) {
+	switchStatus = 'c';
 	temperature.textContent = data.current.temp_c;
 	temperature.classList.toggle('imperial');
 	rainBox.textContent = data.current.precip_mm;
@@ -15,6 +16,7 @@ export function switchToMetric(data) {
 }
 
 export function switchToImperial(data) {
+	switchStatus = 'f';
 	temperature.textContent = data.current.temp_f;
 	temperature.classList.toggle('imperial');
 	rainBox.textContent = data.current.precip_in;
@@ -23,12 +25,16 @@ export function switchToImperial(data) {
 	windBox.textContent = data.current.wind_mph;
 	windBox.classList.toggle('imperial');
 }
-export default function switchUnits(data) {
+
+export function switchUnits(data) {
+	console.log(switchStatus);
 	if (switchStatus === 'c') {
 		switchToImperial(data);
-		switchStatus = 'f';
-	} else {
+	} else if (switchStatus === 'f') {
 		switchToMetric(data);
-		switchStatus = 'c';
 	}
+}
+
+export function resetSwitchStatus() {
+	switchStatus = 'c';
 }

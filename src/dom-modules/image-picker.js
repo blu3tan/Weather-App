@@ -42,7 +42,7 @@ export default function imagePicker(data) {
 		},
 		{
 			icon: 'thunder',
-			text: 'Thunderstorm',
+			text: 'Thunders',
 			codes: [1087, 1246, 1273, 1276, 1279, 1282],
 		},
 		{

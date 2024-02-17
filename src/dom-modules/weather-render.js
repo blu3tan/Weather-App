@@ -1,7 +1,7 @@
 import weatherLocation from '../data-modules/weather-location';
 import dynamicColor from './dynamic-color';
 import imagePicker from './image-picker';
-import switchUnits from './switch-units';
+import { switchUnits } from './switch-units';
 import toggleVisibility from './toggle-visibility';
 
 const listContainer = document.getElementById('list-container');
@@ -12,10 +12,16 @@ const rainBox = document.getElementById('rain-measure');
 const humidityBox = document.getElementById('humidity-measure');
 const windBox = document.getElementById('wind-measure');
 
+let externalData;
+temperature.addEventListener('click', () => {
+	switchUnits(externalData);
+});
+
 export default async function renderWeather(location) {
 	const root = document.documentElement;
 	const weatherText = document.getElementById('description');
 	const weatherData = await weatherLocation(location);
+	externalData = weatherData;
 	// destructuring the multiple return from the function imagePicker
 	// so i can render the icon and use the text
 	const [imageName, description] = imagePicker(weatherData);
@@ -29,10 +35,6 @@ export default async function renderWeather(location) {
 	root.style.setProperty('--color-dynamic', appColor);
 	weatherText.textContent = description;
 
-	temperature.addEventListener('click', () => {
-		console.log(weatherData);
-		switchUnits(weatherData);
-	});
 	weatherIcon.src = `./weather/${imageName}.svg`;
 	searchField.value = `${weatherData.location.name}, ${countryShort}`;
 	temperature.textContent = weatherData.current.temp_c;

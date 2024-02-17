@@ -113,7 +113,7 @@ select {
 	user-select: none;
 	font-family: var(--font-title);
 	font-weight: 800;
-	font-size: 14rem;
+	font-size: 15rem;
 	letter-spacing: 0.2ch;
 	text-wrap: nowrap;
 	mask-image: linear-gradient(#000, rgba(0, 0, 0, 0.2));

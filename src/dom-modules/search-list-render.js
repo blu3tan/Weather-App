@@ -1,4 +1,5 @@
 import searchLocation from '../data-modules/search-location';
+import toggleVisibility from './toggle-visibility';
 import renderWeather from './weather-render';
 
 export function clearContainer(element) {
@@ -17,7 +18,10 @@ export async function renderSearchList(input) {
 			listItem.classList.add('list-item');
 			listItem.textContent = `${element.name}, ${element.country}`;
 			listItem.addEventListener('click', () => {
-				renderWeather(listItem.textContent);
+				toggleVisibility(50);
+				setTimeout(() => {
+					renderWeather(listItem.textContent);
+				}, 600);
 			});
 			listContainer.appendChild(listItem);
 			listContainer.classList.add('show');
