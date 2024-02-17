@@ -12,8 +12,11 @@ const windBox = document.getElementById('wind-measure');
 
 export default async function renderWeather(location) {
 	const root = document.documentElement;
+	const weatherText = document.getElementById('description');
 	const weatherData = await weatherLocation(location);
-	const imageName = imagePicker(weatherData);
+	// destructuring the multiple return from the function imagePicker
+	// so i can render the icon and use the text
+	const [imageName, description] = imagePicker(weatherData);
 	const appColor = dynamicColor(weatherData);
 	console.log(appColor);
 	listContainer.classList.remove('show');
@@ -22,7 +25,8 @@ export default async function renderWeather(location) {
 	// eslint-disable-next-line prefer-destructuring
 	const country = weatherData.location.country;
 	const countryShort = country.split(' ').slice(0, 2).join(' ');
-	// root.style.setProperty('--color-dynamic', appColor);
+	root.style.setProperty('--color-dynamic', appColor);
+	weatherText.textContent = description;
 
 	weatherIcon.src = `./weather/${imageName}.svg`;
 	searchField.value = `${weatherData.location.name}, ${countryShort}`;

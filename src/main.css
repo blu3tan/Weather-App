@@ -77,7 +77,18 @@ select {
 	z-index: 2;
 	height: 100%;
 	width: 100%;
-	/* background-color: var(--color-screen); */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.screen .description {
+	font-family: var(--font-title);
+	font-weight: 800;
+	font-size: 14rem;
+	letter-spacing: 0.15ch;
+	text-wrap: nowrap;
+	mask-image: linear-gradient(#000, rgba(0, 0, 0, 0.2));
 }
 
 /************************** App container **************************/
@@ -90,8 +101,8 @@ select {
 	gap: 1rem;
 
 	padding: 1.5rem;
-	width: min(95dvw, 450px);
-	height: max(85dvh, 750px);
+	width: min(90dvw, 430px);
+	height: max(90dvh, 660px);
 	border-radius: var(--border-radius);
 	overflow: hidden;
 	background-color: var(--color-dynamic);
@@ -99,7 +110,7 @@ select {
 	box-shadow:
 		rgba(64, 64, 80, 0.325) 0px 10px 15px -20px,
 		rgba(0, 0, 0, 0.381) 0px 35px 20px -30px,
-		rgba(40, 53, 66, 0.35) 0px -2px 15px 0px inset;
+		rgba(40, 53, 66, 0.245) 0px -2px 15px 0px inset;
 }
 
 .app-container > * {
@@ -260,10 +271,9 @@ select {
 .main {
 	position: relative;
 	display: flex;
-	overflow: hidden;
 	justify-content: center;
 	align-items: flex-end;
-	padding-bottom: 4rem;
+	padding-bottom: 3rem;
 }
 
 .temp {
@@ -272,7 +282,7 @@ select {
 	position: relative;
 	border-radius: var(--border-radius);
 	font-family: var(--font-title);
-	font-size: 6rem;
+	font-size: 5.5rem;
 	font-weight: 700;
 	transform: translateX(100dvw);
 	transition: transform 0.4s var(--bounce);
@@ -305,7 +315,8 @@ select {
 }
 
 .weather-icon {
-	scale: 0.8;
+	scale: 0.7;
+	top: -10dvh;
 	position: absolute;
 	transform: translateY(-100dvw);
 	transition: transform 0.5s var(--bounce);
