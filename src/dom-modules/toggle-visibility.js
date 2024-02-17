@@ -1,6 +1,8 @@
-export default function toggleVisibility() {
+export default function toggleVisibility(timer) {
 	const movingElements = document.querySelectorAll('.animate');
-	movingElements.forEach((element) => {
-		element.classList.toggle('show');
-	});
+	setTimeout(() => {
+		movingElements.forEach((element) => {
+			element.classList.toggle('show');
+		});
+	}, timer);
 }

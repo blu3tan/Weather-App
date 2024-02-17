@@ -1,6 +1,7 @@
 import weatherLocation from '../data-modules/weather-location';
 import dynamicColor from './dynamic-color';
 import imagePicker from './image-picker';
+import toggleVisibility from './toggle-visibility';
 
 const listContainer = document.getElementById('list-container');
 const searchField = document.getElementById('location');
@@ -33,4 +34,5 @@ export default async function renderWeather(location) {
 	rainBox.textContent = weatherData.current.precip_mm;
 	humidityBox.textContent = weatherData.current.humidity;
 	windBox.textContent = weatherData.current.wind_kph;
+	toggleVisibility(1000);
 }
