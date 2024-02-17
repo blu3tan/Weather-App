@@ -18,7 +18,6 @@ export default async function renderWeather(location) {
 	// so i can render the icon and use the text
 	const [imageName, description] = imagePicker(weatherData);
 	const appColor = dynamicColor(weatherData);
-	console.log(appColor);
 	listContainer.classList.remove('show');
 
 	// Just a trick to somehow avoid long country names to overflow

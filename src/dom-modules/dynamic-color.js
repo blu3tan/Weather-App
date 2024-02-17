@@ -1,8 +1,8 @@
+// eslint-disable-next-line consistent-return
 export default function dynamicColor(data) {
 	const temp = data.current.temp_c;
 	const isDay = data.current.is_day;
 	const condition = data.current.condition.code;
-	console.log([temp, isDay, condition]);
 	if (isDay === 1) {
 		if (condition === 1000) {
 			if (temp <= -1) return '#757575'; // grey
