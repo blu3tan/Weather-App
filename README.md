@@ -12,6 +12,7 @@
 # Concept
 
 A weather app fetching data from <a href="https://www.weatherapi.com/">Weather api</a>
+
 The app is:
 
 - fully responsive
