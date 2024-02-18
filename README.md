@@ -5,7 +5,7 @@
 <img src="./src/gifs/weather-gif-800.gif">
 </a>
 
-[Live Demo]("https://blu3tan.github.io/Weather-App/")
+[Live Demo](https://blu3tan.github.io/Weather-App/)
 
 </div>
 
