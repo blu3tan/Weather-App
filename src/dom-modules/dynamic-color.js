@@ -9,7 +9,7 @@ export default function dynamicColor(data) {
 		if (temp <= -1) {
 			mainColor = '#adbdce';
 			gradient = 'linear-gradient(180deg, #adbdce, #dce7f2)';
-		} // grey
+		} // snow grey
 
 		if (temp >= 0 && temp <= 15) {
 			mainColor = '#7bace0';
@@ -24,7 +24,10 @@ export default function dynamicColor(data) {
 			gradient = 'linear-gradient(180deg, #e37d33, #f9cc5c)';
 		} // orange
 	}
-
+	if (isDay === 1 && condition !== 1000) {
+		mainColor = '#757575';
+		gradient = 'linear-gradient(180deg, #757575, #cccccc)';
+	}
 	if (isDay === 0) {
 		if (condition === 1000) {
 			mainColor = '#224475';

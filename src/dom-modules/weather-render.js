@@ -1,7 +1,8 @@
 import weatherLocation from '../data-modules/weather-location';
 import dynamicColor from './dynamic-color';
 import imagePicker from './image-picker';
-import { switchUnits } from './switch-units';
+import switchUnits from './switch-units';
+import timeAndDate from './time-date-section';
 import toggleVisibility from './toggle-visibility';
 
 const listContainer = document.getElementById('list-container');
@@ -35,6 +36,7 @@ export default async function renderWeather(location) {
 	root.style.setProperty('--color-dynamic', appColor);
 	weatherText.textContent = description;
 
+	timeAndDate(weatherData);
 	weatherIcon.src = `./weather/${imageName}.svg`;
 	temperature.textContent = weatherData.current.temp_c;
 	rainBox.textContent = weatherData.current.precip_mm;

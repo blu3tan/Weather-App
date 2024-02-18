@@ -1,11 +1,8 @@
 import { renderSearchList } from './dom-modules/search-list-render';
-import timeAndDate from './dom-modules/time-date-section';
 import renderWeather from './dom-modules/weather-render';
 import './main.css';
 
 require.context('./weather', false, /\.svg$/);
-
-timeAndDate();
 
 (() => {
 	document.addEventListener('click', (e) => {

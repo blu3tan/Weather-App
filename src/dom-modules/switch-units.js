@@ -4,7 +4,7 @@ const humidityBox = document.getElementById('humidity-measure');
 const windBox = document.getElementById('wind-measure');
 let switchStatus = 'c';
 
-export function switchToMetric(data) {
+function switchToMetric(data) {
 	switchStatus = 'c';
 	temperature.textContent = data.current.temp_c;
 	temperature.classList.toggle('imperial');
@@ -15,7 +15,7 @@ export function switchToMetric(data) {
 	windBox.classList.toggle('imperial');
 }
 
-export function switchToImperial(data) {
+function switchToImperial(data) {
 	switchStatus = 'f';
 	temperature.textContent = data.current.temp_f;
 	temperature.classList.toggle('imperial');
@@ -26,7 +26,7 @@ export function switchToImperial(data) {
 	windBox.classList.toggle('imperial');
 }
 
-export function switchUnits(data) {
+export default function switchUnits(data) {
 	if (switchStatus === 'c') {
 		switchToImperial(data);
 	} else if (switchStatus === 'f') {

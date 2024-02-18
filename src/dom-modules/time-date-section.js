@@ -1,16 +1,15 @@
 // Display the day and the running time on the dedicated section
 
-export default function timeAndDate() {
-	const day = document.getElementById('day');
-	const time = document.getElementById('time');
+export default function timeAndDate(fetchedData) {
+	const timeData = fetchedData.location.localtime;
+	const date = timeData.split(' ')[0];
+	const time = timeData.split(' ')[1];
+	const dayContainer = document.getElementById('day');
+	const timeContainer = document.getElementById('time');
 
-	const dayName = new Date().toLocaleString('en-us', {
+	const dayName = new Date(date).toLocaleString('en-us', {
 		weekday: 'long',
 	});
-	day.textContent = dayName;
-
-	setInterval(() => {
-		const currentTime = new Date().toTimeString().slice(0, 5);
-		time.textContent = currentTime;
-	}, 1000);
+	dayContainer.textContent = dayName;
+	timeContainer.textContent = time;
 }
