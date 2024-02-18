@@ -9,6 +9,7 @@ export function clearContainer(element) {
 }
 
 export async function renderSearchList(input) {
+	const searchField = document.getElementById('location');
 	const listContainer = document.getElementById('list-container');
 	const locationsArray = await searchLocation(input);
 	if (input.length >= 3 && locationsArray.length !== 0) {
@@ -19,6 +20,7 @@ export async function renderSearchList(input) {
 			listItem.textContent = `${element.name}, ${element.country}`;
 			listItem.addEventListener('click', () => {
 				toggleVisibility(50);
+				searchField.blur();
 				setTimeout(() => {
 					renderWeather(listItem.textContent);
 				}, 600);

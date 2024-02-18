@@ -27,14 +27,9 @@ export function switchToImperial(data) {
 }
 
 export function switchUnits(data) {
-	console.log(switchStatus);
 	if (switchStatus === 'c') {
 		switchToImperial(data);
 	} else if (switchStatus === 'f') {
 		switchToMetric(data);
 	}
-}
-
-export function resetSwitchStatus() {
-	switchStatus = 'c';
 }
