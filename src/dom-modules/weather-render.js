@@ -12,6 +12,7 @@ const rainBox = document.getElementById('rain-measure');
 const humidityBox = document.getElementById('humidity-measure');
 const windBox = document.getElementById('wind-measure');
 
+// is this bad??
 let externalData;
 temperature.addEventListener('click', () => {
 	switchUnits(externalData);
