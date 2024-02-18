@@ -27,6 +27,8 @@ Project after project, i'm trying to achieve cleaner and readable coding habits,
 # Visual and ux
 
 The app design is based on an i-watch weather app design mockup i have found on pinterest tweaked to fit the exercise requirements.
+The icons are from <a href="https://bas.dev/work/meteocons">Meteocons</a> an awesome free project, big thanks to <a href="https://github.com/basmilius">Bass Milius</a>
+
 As always the design is minimal but intuitive, all the functions are there even tho whenever i can, i try to avoid adding another ui element. Instead i prefer to refactor what is already there to fit multiple purpose (see the search field/title and the temperature/unit switch).
 
 Sometimes this requires more code but i think is worth it.
